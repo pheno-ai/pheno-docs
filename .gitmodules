@@ -1,0 +1,6 @@
+[submodule "website"]
+	path = website
+	url = git@bitbucket.org:TalShorPhenoAI/mbz_hackathon.git
+[submodule "mbz_hackathon"]
+	path = mbz_hackathon
+	url = git@bitbucket.org:TalShorPhenoAI/mbz_hackathon.git
