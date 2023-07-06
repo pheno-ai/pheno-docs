@@ -1,0 +1,16 @@
+/.quarto/
+# Quarto output
+/_site/
+
+# RStudio and R files
+.Rproj.user/
+.Rhistory
+.RData
+
+# Python files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# MacOS files
+.DS_Store

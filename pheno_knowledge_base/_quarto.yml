@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Pheno.AI"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - datasets.md
+      - platform_tutorial.md
+      - publications.md
+      
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - platform_tutorial.md
+      - pheno_utils.md
+      - faq.md
+      - section: "Datasets"
+        contents:
+          - datasets.md
+          - datasets/0-population.ipynb
+          - datasets/1-events.ipynb
+          - datasets/2-anthropometrics.ipynb
+          - datasets/3-fundus.ipynb
+          - datasets/4-liver_ultrasound.ipynb
+          - datasets/5-diet_logging.ipynb
+          - datasets/6-hand_grip.ipynb
+          - datasets/7-blood_pressure.ipynb
+          - datasets/8-serum_lipidomics.ipynb
+          - datasets/9-sleep.ipynb
+          - datasets/10-vascular_health.ipynb
+          - datasets/11-body_composition.ipynb
+          - datasets/12-carotid_ultrasound.ipynb
+          - datasets/13-gut_microbiome.ipynb
+          - datasets/14-human_genetics.ipynb
+          - datasets/15-ecg.ipynb
+          - datasets/16-blood_tests.ipynb
+          - datasets/17-cgm.ipynb
+          - datasets/21-medical_conditions.ipynb
+          - datasets/22-bone_density.ipynb
+
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
