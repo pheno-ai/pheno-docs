@@ -1,9 +1,0 @@
-project:
-  output-dir: _docs
-
-website:
-  title: "pheno_website"
-  site-url: "https://pheno-ai.github.io/pheno_website"
-  description: "Public repository for MBZUAI Pheno HPP hackathon 2023"
-  repo-branch: main
-  repo-url: "https://github.com/pheno-ai/pheno_website"
