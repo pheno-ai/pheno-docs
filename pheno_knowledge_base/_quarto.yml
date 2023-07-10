@@ -8,7 +8,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - datasets.md
+      - href: datasets.md
+        text: Available Datasets
       - platform_tutorial.md
       - publications.md
       
@@ -21,7 +22,8 @@ website:
       - faq.md
       - section: "Datasets"
         contents:
-          - datasets.md
+          - href: datasets.md
+            text: Available Datasets
           - datasets/0-population.ipynb
           - datasets/1-events.ipynb
           - datasets/2-anthropometrics.ipynb
