@@ -1,24 +1,54 @@
-# Data Availability
-
-|   id | dataset                                                   | data points (participants)   | tabular data   | time series data   | image data   |
-|------|-----------------------------------------------------------|------------------------------|----------------|--------------------|--------------|
-|    1 | [population](datasets/1-population.html)                  | 23,300 (11,179)              | ✓              |                    |              |
-|    2 | [anthropometrics](datasets/2-anthropometrics.html)        | 13,624 (10,812)              | ✓              |                    |              |
-|    3 | [fundus](datasets/3-fundus.html)                          | 7,086 (7,052)                | ✓              |                    | ✓            |
-|    4 | [liver ultrasound](datasets/4-liver_ultrasound.html)      | 30,542 (8,986)               | ✓              |                    |              |
-|    5 | [diet logging](datasets/5-diet_logging.html)              | 2,650,458 (10,236)           | ✓              | ✓                  |              |
-|    6 | [hand grip](datasets/6-hand_grip.html)                    | 13,624 (10,812)              | ✓              |                    |              |
-|    7 | [blood pressure](datasets/7-blood_pressure.html)          | 13,742 (10,894)              | ✓              |                    |              |
-|    8 | [serum lipidomics](datasets/8-serum_lipidomics.html)      | 6,348 (6,169)                | ✓              |                    |              |
-|    9 | [sleep](datasets/9-sleep.html)                            | 20,938 (6,975)               | ✓              | ✓                  |              |
-|   10 | [vascular](datasets/10-vascular.html)                     | 12,638 (10,516)              | ✓              |                    |              |
-|   11 | [body composition](datasets/11-body_composition.html)     | 10,215 (9,261)               | ✓              |                    |              |
-|   12 | [carotid ultrasound](datasets/12-carotid_ultrasound.html) | 10,190 (8,986)               | ✓              |                    |              |
-|   13 | [gut microbiome](datasets/13-gut_microbiome.html)         | 11,295 (9,249)               | ✓              |                    |              |
-|   14 | [human genetics](datasets/14-human_genetics.html)         | 8,695 (8,695)                | ✓              |                    |              |
-|   15 | [ecg](datasets/15-ecg.html)                               | 10,695 (8,782)               | ✓              | ✓                  |              |
-|   16 | [blood tests](datasets/16-blood_tests.html)               | 29,507 (10,342)              | ✓              |                    |              |
-|   17 | [cgm](datasets/17-cgm.html)                               | 10,087 (10,011)              | ✓              | ✓                  |              |
-|   21 | [medical conditions](datasets/21-medical_conditions.html) | 20,530 (9,575)               | ✓              |                    |              |
-|   22 | [bone density](datasets/22-bone_density.html)             | 10,215 (9,261)               | ✓              |                    |              |
-
+|   id | dataset                                                   | feature set                     | data points (participants)   | first date   | last date   | tabular data   | time series data   | image data   |
+|-----:|:----------------------------------------------------------|:--------------------------------|:-----------------------------|:-------------|:------------|:---------------|:-------------------|:-------------|
+|    0 | [population](datasets/0-population.html)                  | population                      | 11179 (11179)                | 2018-12-05   | 2023-03-19  | ✓              |                    |              |
+|    1 | [events](datasets/1-events.html)                          | events                          | 23300 (11179)                | 2018-12-05   | 2023-03-19  | ✓              |                    |              |
+|    2 | [anthropometrics](datasets/2-anthropometrics.html)        | anthropometrics                 | 13568 (10781)                | 2018-11-22   | 2023-02-07  | ✓              |                    |              |
+|    3 | [fundus](datasets/3-fundus.html)                          | fundus                          | 7079 (7049)                  | 2021-02-17   | 2022-12-04  | ✓              |                    |              |
+|    3 | [fundus](datasets/3-fundus.html)                          | microvasculature                | 7079 (7049)                  | 2021-02-17   | 2022-12-04  | ✓              |                    |              |
+|    3 | [fundus](datasets/3-fundus.html)                          | images                          | 7079 (7049)                  | 2021-02-17   | 2022-12-04  | ✓              |                    | ✓            |
+|    4 | [liver_ultrasound](datasets/4-liver_ultrasound.html)      | liver_ultrasound                | 30997 (9000)                 | 2020-02-20   | 2023-05-14  | ✓              |                    |              |
+|    5 | [diet_logging](datasets/5-diet_logging.html)              | diet_logging                    | 164956 (10220)               | 2019-09-01   | 2023-03-21  | ✓              |                    |              |
+|    5 | [diet_logging](datasets/5-diet_logging.html)              | diet_logging_events             | 2646550 (10220)              | 2019-09-01   | 2023-03-21  | ✓              |                    |              |
+|    5 | [diet_logging](datasets/5-diet_logging.html)              | raw_diet_logging_events         | 6496559 (10723)              | 2019-09-01   | 2023-03-21  | ✓              |                    |              |
+|    6 | [hand_grip](datasets/6-hand_grip.html)                    | hand_grip                       | 13533 (10764)                | 2018-12-27   | 2023-02-07  | ✓              |                    |              |
+|    7 | [blood_pressure](datasets/7-blood_pressure.html)          | blood_pressure                  | 13706 (10872)                | 2018-12-27   | 2023-02-15  | ✓              |                    |              |
+|    8 | [serum_lipidomics](datasets/8-serum_lipidomics.html)      | serum_lipidomics                | 6347 (6169)                  | 2019-02-19   | 2021-08-08  | ✓              |                    |              |
+|    9 | [sleep](datasets/9-sleep.html)                            | sleep                           | 21077 (7023)                 | 2020-01-15   | 2022-12-27  | ✓              |                    |              |
+|    9 | [sleep](datasets/9-sleep.html)                            | sleep_raw                       | 21589 (7132)                 | 2020-01-15   | 2022-12-27  | ✓              |                    |              |
+|    9 | [sleep](datasets/9-sleep.html)                            | hrv                             | 20067 (6941)                 | 2020-01-15   | 2022-12-27  | ✓              |                    |              |
+|    9 | [sleep](datasets/9-sleep.html)                            | hrv_raw                         | 21589 (7132)                 | 2020-01-15   | 2022-12-27  | ✓              |                    |              |
+|    9 | [sleep](datasets/9-sleep.html)                            | channels_time_series            | 21112 (6988)                 | 2020-01-15   | 2022-12-27  | ✓              | ✓                  |              |
+|    9 | [sleep](datasets/9-sleep.html)                            | channels_edf_file               | 21109 (6988)                 | 2020-01-15   | 2022-12-27  | ✓              |                    |              |
+|    9 | [sleep](datasets/9-sleep.html)                            | events_time_series              | 21412 (7077)                 | 2020-01-15   | 2022-12-27  | ✓              | ✓                  |              |
+|   10 | [vascular_health](datasets/10-vascular_health.html)       | vascular_health                 | 11976 (10103)                | 2018-12-27   | 2023-02-05  | ✓              |                    |              |
+|   11 | [body_composition](datasets/11-body_composition.html)     | body_composition                | 10093 (9143)                 | 2020-06-09   | 2023-03-16  | ✓              |                    |              |
+|   12 | [carotid_ultrasound](datasets/12-carotid_ultrasound.html) | carotid_ultrasound              | 9737 (8738)                  | 2020-07-23   | 2023-04-09  | ✓              |                    |              |
+|   13 | [gut_microbiome](datasets/13-gut_microbiome.html)         | gut_microbiome                  | 11295 (9249)                 | 2019-02-14   | 2023-02-05  | ✓              |                    |              |
+|   13 | [gut_microbiome](datasets/13-gut_microbiome.html)         | raw_fastq                       | 11295 (9249)                 | 2019-02-14   | 2023-02-05  | ✓              |                    |              |
+|   13 | [gut_microbiome](datasets/13-gut_microbiome.html)         | trimmed_fastq                   | 11295 (9249)                 | 2019-02-14   | 2023-02-05  | ✓              |                    |              |
+|   13 | [gut_microbiome](datasets/13-gut_microbiome.html)         | nonhuman_fastq                  | 11295 (9249)                 | 2019-02-14   | 2023-02-05  | ✓              |                    |              |
+|   13 | [gut_microbiome](datasets/13-gut_microbiome.html)         | fastqc                          | 11295 (9249)                 | 2019-02-14   | 2023-02-05  | ✓              |                    |              |
+|   13 | [gut_microbiome](datasets/13-gut_microbiome.html)         | human_plink                     | 11295 (9249)                 | 2019-02-14   | 2023-02-05  | ✓              |                    |              |
+|   13 | [gut_microbiome](datasets/13-gut_microbiome.html)         | urs_abundances_single           | 11295 (9249)                 | 2019-02-14   | 2023-02-05  | ✓              |                    |              |
+|   13 | [gut_microbiome](datasets/13-gut_microbiome.html)         | urs_abundances_aggregated       | 11295 (9249)                 | 2019-02-14   | 2023-02-05  | ✓              |                    |              |
+|   13 | [gut_microbiome](datasets/13-gut_microbiome.html)         | metaphlan_abundances_single     | 11295 (9249)                 | 2019-02-14   | 2023-02-05  | ✓              |                    |              |
+|   13 | [gut_microbiome](datasets/13-gut_microbiome.html)         | metaphlan_abundances_aggregated | 11295 (9249)                 | 2019-02-14   | 2023-02-05  | ✓              |                    |              |
+|   14 | [human_genetics](datasets/14-human_genetics.html)         | human_genetics                  | 8857 (8857)                  | 2019-03-11   | 2023-03-08  | ✓              |                    |              |
+|   14 | [human_genetics](datasets/14-human_genetics.html)         | pca                             | 8856 (8856)                  | 2019-03-11   | 2023-03-08  | ✓              |                    |              |
+|   14 | [human_genetics](datasets/14-human_genetics.html)         | variants_qc                     | 8857 (8857)                  | 2019-03-11   | 2023-03-08  | ✓              |                    |              |
+|   14 | [human_genetics](datasets/14-human_genetics.html)         | fastq_bam                       | 8857 (8857)                  | 2019-03-11   | 2023-03-08  | ✓              |                    |              |
+|   14 | [human_genetics](datasets/14-human_genetics.html)         | genotypes_raw                   | 8857 (8857)                  | 2019-03-11   | 2023-03-08  | ✓              |                    |              |
+|   14 | [human_genetics](datasets/14-human_genetics.html)         | genotypes_postqc                | 8856 (8856)                  | 2019-03-11   | 2023-03-08  | ✓              |                    |              |
+|   14 | [human_genetics](datasets/14-human_genetics.html)         | relationship                    | 8857 (8857)                  | 2019-03-11   | 2023-03-08  | ✓              |                    |              |
+|   15 | [ecg](datasets/15-ecg.html)                               | ecg                             | 10681 (8773)                 | 2019-08-13   | 2023-03-01  | ✓              |                    |              |
+|   15 | [ecg](datasets/15-ecg.html)                               | raw_timeseries_wide             | 10420 (8585)                 | 2019-08-13   | 2023-03-01  | ✓              |                    |              |
+|   15 | [ecg](datasets/15-ecg.html)                               | processed_timeseries_wide       | 9733 (8107)                  | 2019-08-13   | 2023-02-07  | ✓              |                    |              |
+|   15 | [ecg](datasets/15-ecg.html)                               | raw_timeseries_long             | 10420 (8585)                 | 2019-08-13   | 2023-03-01  | ✓              |                    |              |
+|   15 | [ecg](datasets/15-ecg.html)                               | processed_timeseries_long       | 9733 (8107)                  | 2019-08-13   | 2023-02-07  | ✓              |                    |              |
+|   16 | [blood_tests](datasets/16-blood_tests.html)               | blood_tests                     | 29426 (10340)                | 2010-01-06   | 2023-02-28  | ✓              |                    |              |
+|   17 | [cgm](datasets/17-cgm.html)                               | cgm                             | 10087 (10011)                | 2019-01-07   | 2023-03-13  | ✓              |                    |              |
+|   17 | [cgm](datasets/17-cgm.html)                               | timeseries                      | 10087 (10011)                | 2019-01-07   | 2023-03-13  | ✓              |                    |              |
+|   17 | [cgm](datasets/17-cgm.html)                               | iglu                            | 10087 (10011)                | 2019-01-07   | 2023-03-24  | ✓              |                    |              |
+|   17 | [cgm](datasets/17-cgm.html)                               | iglu_daily                      | 112023 (10011)               | 2019-01-07   | 2023-03-24  | ✓              |                    |              |
+|   18 | [medications](datasets/18-medications.html)               | medications                     | 14527 (10352)                | 2018-10-18   | 2023-03-15  | ✓              |                    |              |
+|   22 | [bone_density](datasets/22-bone_density.html)             | bone_density                    | 10130 (9188)                 | 2020-06-09   | 2023-03-16  | ✓              |                    |              |
