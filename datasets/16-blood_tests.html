@@ -364,13 +364,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-availability" class="level3">
 <h3 class="anchored" data-anchor-id="data-availability">Data availability:</h3>
 <p>The information is stored in 1 parquet file <code>blood_tests.parquet</code>.</p>
-<div class="cell">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:50:11.514735Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:50:11.514571Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:50:12.298258Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:50:12.297803Z&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pheno_utils <span class="im">import</span> PhenoLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:50:12.300083Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:50:12.299936Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:50:27.318303Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:50:27.317214Z&quot;}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'blood_tests'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>DataLoader for blood_tests with
 67 fields
 2 tables: ['blood_tests', 'age_sex']</code></pre>
@@ -380,9 +380,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-dictionary" class="level1">
 <h1>Data dictionary</h1>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:50:27.325171Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:50:27.324870Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:50:27.344450Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:50:27.343976Z&quot;}" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -503,20 +503,884 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>float</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
+<td data-quarto-table-cell-role="th">bt__ast_float_value</td>
+<td>Blood test - AST (Numerical)</td>
+<td>AST (GOT) - Aspartate Aminotransferase</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>u/l</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__basophils_%_float_value</td>
+<td>Blood test - Basophils % (Numerical)</td>
+<td>Baso % - Basophils percent</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__basophils_abs_float_value</td>
+<td>Blood test - Basophils # (Numerical)</td>
+<td>Baso # - Basophils absolute</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>k/ul</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__calcium_float_value</td>
+<td>Blood test - Calcium (Numerical)</td>
+<td>Ca - Calcium</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mg/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__creatinine_float_value</td>
+<td>Blood test - Creatinine (Numerical)</td>
+<td>Creatinine</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mg/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__direct_bilirubin_categorical_value</td>
+<td>Blood test - Direct Bilirubin (Categorical)</td>
+<td>Bilirubin Direct/Conjugated</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Categorical (multiple)</td>
+<td>None</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>categorical</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__direct_bilirubin_float_value</td>
+<td>Blood test - Direct Bilirubin (Numerical)</td>
+<td>Bilirubin Direct/Conjugated</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mg/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__eosinophils_%_float_value</td>
+<td>Blood test - Eosinophils % (Numerical)</td>
+<td>Eos % - eosinophils percent</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__eosinophils_abs_float_value</td>
+<td>Blood test - Eosinophils # (Numerical)</td>
+<td>Eos # - eosinophils absolute</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>k/ul</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__estradiol_categorical_value</td>
+<td>Blood test - Estradiol (Categorical)</td>
+<td>E2 - Estradiol</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Categorical (multiple)</td>
+<td>None</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>categorical</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__estradiol_float_value</td>
+<td>Blood test - Estradiol (Numerical)</td>
+<td>E2 - Estradiol</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>pmol/l</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__ferritin_categorical_value</td>
+<td>Blood test - Ferritin (Categorical)</td>
+<td>Ferritin</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Categorical (multiple)</td>
+<td>None</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>categorical</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__ferritin_float_value</td>
+<td>Blood test - Ferritin (Numerical)</td>
+<td>Ferritin</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>ng/ml</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__ggt_float_value</td>
+<td>Blood test - GGT (Numerical)</td>
+<td>GGT - gama-Glutamyl Transpeptidase</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>u/l</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__glucose_float_value</td>
+<td>Blood test - Glucose (Numerical)</td>
+<td>Glucose</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mg/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__hba1c_float_value</td>
+<td>Blood test - HbA1C (Numerical)</td>
+<td>HbA1C %</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__hdl_cholesterol_float_value</td>
+<td>Blood test - HDL Cholesterol (Numerical)</td>
+<td>HDL Cholesterol</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mg/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__hematocrit_float_value</td>
+<td>Blood test - Hematocrit (Numerical)</td>
+<td>HCT - Hematocrit</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__hemoglobin_float_value</td>
+<td>Blood test - Hemoglobin (Numerical)</td>
+<td>Hb - Hemoglobin</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>g/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__ldl_cholesterol_float_value</td>
+<td>Blood test - LDL Cholesterol (Numerical)</td>
+<td>LDL Cholesterol</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mg/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__lymphocytes_%_float_value</td>
+<td>Blood test - Lymphocytes % (Numerical)</td>
+<td>Lymp % - Lymphocytes percent</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__lymphocytes_abs_float_value</td>
+<td>Blood test - Lymphocytes # (Numerical)</td>
+<td>Lymp # - Lymphocytes absolute</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>k/ul</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__mch_float_value</td>
+<td>Blood test - MCH (Numerical)</td>
+<td>MCH - Mean cell Hemoglobin</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>pg/cell</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__mchc_float_value</td>
+<td>Blood test - MCHC (Numerical)</td>
+<td>MCHC - Mean cell Hemoglobin concentration</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>g/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__mcv_float_value</td>
+<td>Blood test - MCV (Numerical)</td>
+<td>MCV - Mean Corpuscular Volume or Mean cell volume</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>fl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__monocytes_%_float_value</td>
+<td>Blood test - Monocytes % (Numerical)</td>
+<td>Mono % - Monoctypes percent</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__monocytes_abs_float_value</td>
+<td>Blood test - Monocytes # (Numerical)</td>
+<td>Mono % - Monoctypes absolute</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>k/ul</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__mpv_float_value</td>
+<td>Blood test - MPV (Numerical)</td>
+<td>MPV - Mean Platelet Volume</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>fl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__neutrophils_%_float_value</td>
+<td>Blood test - Neutrophils % (Numerical)</td>
+<td>Neut % - Neutrophils percent</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__neutrophils_abs_float_value</td>
+<td>Blood test - Neutrophils # (Numerical)</td>
+<td>Neut # - Neutrophils absolute</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>k/ul</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__non_hdl_cholesterol_float_value</td>
+<td>Blood test - Non HDL Cholesterol (Numerical)</td>
+<td>Non HDL Cholesterol</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mg/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__phosphore_float_value</td>
+<td>Blood test - Phosphore (Numerical)</td>
+<td>P - Phosphore</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mg/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__platelets_float_value</td>
+<td>Blood test - Platelets (Numerical)</td>
+<td>PLT - Platelets</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>k/ul</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__potassium_float_value</td>
+<td>Blood test - Potassium (Numerical)</td>
+<td>K+ - Potassium</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mmol/l</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__rbc_float_value</td>
+<td>Blood test - RBC (Numerical)</td>
+<td>RBC - Red Blood Cells</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>m/ul</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__rdw_float_value</td>
+<td>Blood test - RDW (Numerical)</td>
+<td>RDW - Red Blood Cell Distribution Width</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__rheumatoid_factor_categorical_value</td>
+<td>Blood test - Rheumatoid Factor (Categorical)</td>
+<td>Rheumatoid Factor Quantit</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Categorical (multiple)</td>
+<td>None</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>categorical</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__rheumatoid_factor_float_value</td>
+<td>Blood test - Rheumatoid Factor (Numerical)</td>
+<td>Rheumatoid Factor Quantit</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>iu/ml</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__sodium_float_value</td>
+<td>Blood test - Sodium (Numerical)</td>
+<td>Na - Sodium</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mmol/l</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__testosterone_total_categorical_value</td>
+<td>Blood test - Testosterone Total (Categorical)</td>
+<td>Total Testosterone</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Categorical (multiple)</td>
+<td>None</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>categorical</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__testosterone_total_float_value</td>
+<td>Blood test - Testosterone Total (Numerical)</td>
+<td>Total Testosterone</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>nmol/l</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__total_bilirubin_categorical_value</td>
+<td>Blood test - Total Bilirubin (Categorical)</td>
+<td>Total Billirubin</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Categorical (multiple)</td>
+<td>None</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>categorical</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__total_bilirubin_float_value</td>
+<td>Blood test - Total Bilirubin (Numerical)</td>
+<td>Total Billirubin</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mg/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__total_cholesterol_float_value</td>
+<td>Blood test - Total Cholesterol (Numerical)</td>
+<td>Total Cholesterol</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mg/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__total_protein_float_value</td>
+<td>Blood test - Total Protein (Numerical)</td>
+<td>Total Protien</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>g/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__triglycerides_float_value</td>
+<td>Blood test - Triglycerides (Numerical)</td>
+<td>Triglycerides</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mg/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__tsh_categorical_value</td>
+<td>Blood test - TSH (Categorical)</td>
+<td>TSH - Thyroid-stimulating hormone</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Categorical (multiple)</td>
+<td>None</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>categorical</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__tsh_float_value</td>
+<td>Blood test - TSH (Numerical)</td>
+<td>TSH - Thyroid-stimulating hormone</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>miu/l</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__urate_float_value</td>
+<td>Blood test - Urate (Numerical)</td>
+<td>Urate / Uric Acid</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mg/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__urea_float_value</td>
+<td>Blood test - Urea (Numerical)</td>
+<td>Urea</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>mg/dl</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__vitamin_b12_categorical_value</td>
+<td>Blood test - Vitamin B12 (Categorical)</td>
+<td>Vitamin B12 - Cobalamin</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Categorical (multiple)</td>
+<td>None</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>categorical</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__vitamin_b12_float_value</td>
+<td>Blood test - Vitamin B12 (Numerical)</td>
+<td>Vitamin B12 - Cobalamin</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>pg/ml</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__vitamin_d_categorical_value</td>
+<td>Blood test - Vitamin D (Categorical)</td>
+<td>Vitamin D</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Categorical (multiple)</td>
+<td>None</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>categorical</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">bt__vitamin_d_float_value</td>
+<td>Blood test - Vitamin D (Numerical)</td>
+<td>Vitamin D</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>ng/ml</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">bt__wbc_float_value</td>
+<td>Blood test - WBC (Numerical)</td>
+<td>WBC - White blood cells</td>
+<td>NaN</td>
+<td>/blood_tests/blood_tests.parquet</td>
+<td>Continuous</td>
+<td>k/ul</td>
+<td>NaN</td>
+<td>tabular</td>
+<td>Single</td>
+<td>10K</td>
+<td>NaN</td>
+<td>2015-01-01</td>
+<td>float</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">urine__acr_categorical_value</td>
@@ -601,7 +1465,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 
-<p>65 rows × 13 columns</p>
 </div>
 </div>
 </div>
