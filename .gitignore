@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 */_proc/*
+/.quarto/
+/_site/
 
 # C extensions
 *.so
@@ -138,6 +140,8 @@ venv.bak/
 
 # mkdocs documentation
 /site
+*/.quarto/
+*/_site/
 
 # mypy
 .mypy_cache/
