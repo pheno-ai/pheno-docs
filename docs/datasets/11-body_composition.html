@@ -365,13 +365,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-availability" class="level3">
 <h3 class="anchored" data-anchor-id="data-availability">Data availability:</h3>
 <p>The information is stored in 1 parquet file: <code>body_composition.parquet</code></p>
-<div class="cell">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:47:27.043479Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:47:27.043194Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:47:27.943717Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:47:27.943259Z&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pheno_utils <span class="im">import</span> PhenoLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'body_composition'</span>, unique_index<span class="op">=</span><span class="va">True</span>)</span>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:47:27.945491Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:47:27.945361Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:48:29.583324Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:48:29.582149Z&quot;}" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'body_composition'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>DataLoader for body_composition with
 157 fields
 2 tables: ['body_composition', 'age_sex']</code></pre>
@@ -381,9 +381,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-dictionary" class="level1">
 <h1>Data dictionary</h1>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:48:29.591644Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:48:29.590398Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:48:29.621235Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:48:29.620718Z&quot;}" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -504,20 +504,2324 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>float</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
+<td data-quarto-table-cell-role="th">body_comp_android_fat_mass</td>
+<td>Body composition android fat mass</td>
+<td>Body composition android fat mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_android_lean_mass</td>
+<td>Body composition android lean mass</td>
+<td>Body composition android lean mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_android_region_percent_fat</td>
+<td>Body composition android region percent fat</td>
+<td>Body composition android region percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_android_tissue_mass</td>
+<td>Body composition android tissue mass</td>
+<td>Body composition android tissue mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_android_tissue_percent_fat</td>
+<td>Body composition android tissue percent fat</td>
+<td>Body composition android tissue percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_android_total_mass</td>
+<td>Body composition android total mass</td>
+<td>Body composition android total mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arm_left_bone_mass</td>
+<td>Body composition arm left bone mass</td>
+<td>Body composition left arm bone mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arm_left_fat_free_mass</td>
+<td>Body composition arm left fat free mass</td>
+<td>Body composition left arm fat free mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arm_left_fat_mass</td>
+<td>Body composition arm left fat mass</td>
+<td>Body composition left arm fat mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arm_left_lean_mass</td>
+<td>Body composition arm left lean mass</td>
+<td>Body composition left arm lean mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arm_left_region_percent_fat</td>
+<td>Body composition arm left region percent fat</td>
+<td>Body composition left arm region percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arm_left_tissue_mass</td>
+<td>Body composition arm left tissue mass</td>
+<td>Body composition left arm tissue mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arm_left_tissue_percent_fat</td>
+<td>Body composition arm left tissue percent fat</td>
+<td>Body composition left arm tissue percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arm_left_total_mass</td>
+<td>Body composition arm left total mass</td>
+<td>Body composition left arm total mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arm_right_bone_mass</td>
+<td>Body composition arm right bone mass</td>
+<td>Body composition right arm bone mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arm_right_fat_free_mass</td>
+<td>Body composition arm right fat free mass</td>
+<td>Body composition right arm fat free mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arm_right_fat_mass</td>
+<td>Body composition arm right fat mass</td>
+<td>Body composition right arm fat mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arm_right_lean_mass</td>
+<td>Body composition arm right lean mass</td>
+<td>Body composition right arm lean mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arm_right_region_percent_fat</td>
+<td>Body composition arm right region percent fat</td>
+<td>Body composition right arm region percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arm_right_tissue_mass</td>
+<td>Body composition arm right tissue mass</td>
+<td>Body composition right arm tissue mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arm_right_tissue_percent_fat</td>
+<td>Body composition arm right tissue percent fat</td>
+<td>Body composition right arm tissue percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arm_right_total_mass</td>
+<td>Body composition arm right total mass</td>
+<td>Body composition right arm total mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arms_bone_mass</td>
+<td>Body composition arms bone mass</td>
+<td>Body composition arms bone mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arms_diff_bone_mass</td>
+<td>Body composition arms diff bone mass</td>
+<td>Body composition, the bone mass difference bet...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arms_diff_fat_free_mass</td>
+<td>Body composition arms diff fat free mass</td>
+<td>Body composition the fat free mass difference ...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arms_diff_fat_mass</td>
+<td>Body composition arms diff fat mass</td>
+<td>Body composition the fat mass difference betwe...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arms_diff_lean_mass</td>
+<td>Body composition arms diff lean mass</td>
+<td>Body composition the lean mass difference betw...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arms_diff_region_percent_fat</td>
+<td>Body composition arms diff region percent fat</td>
+<td>Body composition the region percent fat differ...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arms_diff_tissue_mass</td>
+<td>Body composition arms diff tissue mass</td>
+<td>Body composition the tissue mass difference be...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arms_diff_tissue_percent_fat</td>
+<td>Body composition arms diff tissue percent fat</td>
+<td>Body composition the tissue percent fat differ...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arms_diff_total_mass</td>
+<td>Body composition arms diff total mass</td>
+<td>Body composition the total mass difference bet...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arms_fat_free_mass</td>
+<td>Body composition arms fat free mass</td>
+<td>Body composition arms fat free mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arms_fat_mass</td>
+<td>Body composition arms fat mass</td>
+<td>Body composition arms fat mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arms_lean_mass</td>
+<td>Body composition arms lean mass</td>
+<td>Body composition arms lean mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arms_region_percent_fat</td>
+<td>Body composition arms region percent fat</td>
+<td>Body composition arms region percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arms_tissue_mass</td>
+<td>Body composition arms tissue mass</td>
+<td>Body composition arms tissue mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_arms_tissue_percent_fat</td>
+<td>Body composition arms tissue percent fat</td>
+<td>Body composition arms tissue percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_arms_total_mass</td>
+<td>Body composition arms total mass</td>
+<td>Body composition arms total mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_dose</td>
+<td>Body composition dose</td>
+<td>Radiation exposure dose during body compositio...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>μGy</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_gynoid_bone_mass</td>
+<td>Body composition gynoid bone mass</td>
+<td>Body composition gynoid bone mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_gynoid_fat_free_mass</td>
+<td>Body composition gynoid fat free mass</td>
+<td>Body composition gynoid fat free mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_gynoid_fat_mass</td>
+<td>Body composition gynoid fat mass</td>
+<td>Body composition gynoid fat mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_gynoid_lean_mass</td>
+<td>Body composition gynoid lean mass</td>
+<td>Body composition gynoid lean mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_gynoid_region_percent_fat</td>
+<td>Body composition gynoid region percent fat</td>
+<td>Body composition gynoid region percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_gynoid_tissue_mass</td>
+<td>Body composition gynoid tissue mass</td>
+<td>Body composition gynoid tissue mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_gynoid_tissue_percent_fat</td>
+<td>Body composition gynoid tissue percent fat</td>
+<td>Body composition gynoid tissue percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_gynoid_total_mass</td>
+<td>Body composition gynoid total mass</td>
+<td>Body composition gynoid total mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_leg_left_bone_mass</td>
+<td>Body composition leg left bone mass</td>
+<td>Body composition left leg bone mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_leg_left_fat_free_mass</td>
+<td>Body composition leg left fat free mass</td>
+<td>Body composition left leg fat free mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_leg_left_fat_mass</td>
+<td>Body composition leg left fat mass</td>
+<td>Body composition left leg fat mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_leg_left_lean_mass</td>
+<td>Body composition leg left lean mass</td>
+<td>Body composition left leg lean mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_leg_left_region_percent_fat</td>
+<td>Body composition leg left region percent fat</td>
+<td>Body composition left leg region percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_leg_left_tissue_mass</td>
+<td>Body composition leg left tissue mass</td>
+<td>Body composition left leg tissue mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_leg_left_tissue_percent_fat</td>
+<td>Body composition leg left tissue percent fat</td>
+<td>Body composition left leg tissue percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_leg_left_total_mass</td>
+<td>Body composition leg left total mass</td>
+<td>Body composition left leg total mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_leg_right_bone_mass</td>
+<td>Body composition leg right bone mass</td>
+<td>Body composition right leg bone mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_leg_right_fat_free_mass</td>
+<td>Body composition leg right fat free mass</td>
+<td>Body composition right leg fat free mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_leg_right_fat_mass</td>
+<td>Body composition leg right fat mass</td>
+<td>Body composition right leg fat mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_leg_right_lean_mass</td>
+<td>Body composition leg right lean mass</td>
+<td>Body composition right leg lean mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_leg_right_region_percent_fat</td>
+<td>Body composition leg right region percent fat</td>
+<td>Body composition right leg region percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_leg_right_tissue_mass</td>
+<td>Body composition leg right tissue mass</td>
+<td>Body composition right leg tissue mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_leg_right_tissue_percent_fat</td>
+<td>Body composition leg right tissue percent fat</td>
+<td>Body composition right leg tissue percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_leg_right_total_mass</td>
+<td>Body composition leg right total mass</td>
+<td>Body composition right leg total mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_legs_bone_mass</td>
+<td>Body composition legs bone mass</td>
+<td>Body composition legs bone mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_legs_diff_bone_mass</td>
+<td>Body composition legs diff bone mass</td>
+<td>Body composition the bone mass difference betw...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_legs_diff_fat_free_mass</td>
+<td>Body composition legs diff fat free mass</td>
+<td>Body composition the fat free mass difference ...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_legs_diff_fat_mass</td>
+<td>Body composition legs diff fat mass</td>
+<td>Body composition the fat mass difference betwe...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_legs_diff_lean_mass</td>
+<td>Body composition legs diff lean mass</td>
+<td>Body composition the lean mass difference betw...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_legs_diff_region_percent_fat</td>
+<td>Body composition legs diff region percent fat</td>
+<td>Body composition the region percent fat differ...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_legs_diff_tissue_mass</td>
+<td>Body composition legs diff tissue mass</td>
+<td>Body composition the tissue mass difference be...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_legs_diff_tissue_percent_fat</td>
+<td>Body composition legs diff tissue percent fat</td>
+<td>Body composition the tissue percent fat differ...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_legs_diff_total_mass</td>
+<td>Body composition legs diff total mass</td>
+<td>Body composition the total mass difference bet...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_legs_fat_free_mass</td>
+<td>Body composition legs fat free mass</td>
+<td>Body composition legs fat free mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_legs_fat_mass</td>
+<td>Body composition legs fat mass</td>
+<td>Body composition legs fat mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_legs_lean_mass</td>
+<td>Body composition legs lean mass</td>
+<td>Body composition legs lean mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_legs_region_percent_fat</td>
+<td>Body composition legs region percent fat</td>
+<td>Body composition legs region percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_legs_tissue_mass</td>
+<td>Body composition legs tissue mass</td>
+<td>Body composition legs tissue mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_legs_tissue_percent_fat</td>
+<td>Body composition legs tissue percent fat</td>
+<td>Body composition legs tissue percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_legs_total_mass</td>
+<td>Body composition legs total mass</td>
+<td>Body composition legs total mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_bone_mass</td>
+<td>Body composition total bone mass</td>
+<td>Body composition total body bone mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_diff_bone_mass</td>
+<td>Body composition total diff bone mass</td>
+<td>Body composition bone mass difference between ...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_diff_fat_free_mass</td>
+<td>Body composition total diff fat free mass</td>
+<td>Body composition total fat free mass differenc...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_diff_fat_mass</td>
+<td>Body composition total diff fat mass</td>
+<td>Body composition total fat mass difference bet...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_diff_lean_mass</td>
+<td>Body composition total diff lean mass</td>
+<td>Body composition total lean mass difference be...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_diff_region_percent_fat</td>
+<td>Body composition total diff region percent fat</td>
+<td>Body composition total region percent fat diff...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_diff_tissue_mass</td>
+<td>Body composition total diff tissue mass</td>
+<td>Body composition total tissue mass difference ...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_diff_tissue_percent_fat</td>
+<td>Body composition total diff tissue percent fat</td>
+<td>Body composition total tissue percent fat diff...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_diff_total_mass</td>
+<td>Body composition total diff total mass</td>
+<td>Body composition total mass difference between...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_fat_free_mass</td>
+<td>Body composition total fat free mass</td>
+<td>Body composition total body fat free mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_fat_mass</td>
+<td>Body composition total fat mass</td>
+<td>Body composition total body fat mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_lean_mass</td>
+<td>Body composition total lean mass</td>
+<td>Body composition total body lean mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_left_bone_mass</td>
+<td>Body composition total left bone mass</td>
+<td>Body composition total bone mass of the body's...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_left_fat_free_mass</td>
+<td>Body composition total left fat free mass</td>
+<td>Body composition total fat free mass of the bo...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_left_fat_mass</td>
+<td>Body composition total left fat mass</td>
+<td>Body composition total fat mass of the body's ...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_left_lean_mass</td>
+<td>Body composition total left lean mass</td>
+<td>Body composition total lean mass of the body's...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_left_region_percent_fat</td>
+<td>Body composition total left region percent fat</td>
+<td>Body composition total region percent fat of t...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_left_tissue_mass</td>
+<td>Body composition total left tissue mass</td>
+<td>Body composition total tissue mass of the body...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_left_tissue_percent_fat</td>
+<td>Body composition total left tissue percent fat</td>
+<td>Body composition total tissue percent fat of t...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_left_total_mass</td>
+<td>Body composition total left total mass</td>
+<td>Body composition total mass of the body's left...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_region_percent_fat</td>
+<td>Body composition total region percent fat</td>
+<td>Body composition total region percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_right_bone_mass</td>
+<td>Body composition total right bone mass</td>
+<td>Body composition total bone mass of the body's...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_right_fat_free_mass</td>
+<td>Body composition total right fat free mass</td>
+<td>Body composition total fat free mass of the bo...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_right_fat_mass</td>
+<td>Body composition total right fat mass</td>
+<td>Body composition total fat mass of the body's ...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_right_lean_mass</td>
+<td>Body composition total right lean mass</td>
+<td>Body composition total lean mass of the body's...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_right_region_percent_fat</td>
+<td>Body composition total right region percent fat</td>
+<td>Body composition total region percent fat of t...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_right_tissue_mass</td>
+<td>Body composition total right tissue mass</td>
+<td>Body composition total tissue mass of the body...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_right_tissue_percent_fat</td>
+<td>Body composition total right tissue percent fat</td>
+<td>Body composition total tissue percent fat of t...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_right_total_mass</td>
+<td>Body composition total right total mass</td>
+<td>Body composition total total mass of the body'...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_tissue_mass</td>
+<td>Body composition total tissue mass</td>
+<td>Body composition total tissue mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_total_tissue_percent_fat</td>
+<td>Body composition total tissue percent fat</td>
+<td>Body composition total tissue percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_total_total_mass</td>
+<td>Body composition total total mass</td>
+<td>Body composition total mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_bone_mass</td>
+<td>Body composition trunk bone mass</td>
+<td>Body composition trunk bone mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_diff_bone_mass</td>
+<td>Body composition trunk diff bone mass</td>
+<td>Body composition the difference in bone mass b...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_diff_fat_free_mass</td>
+<td>Body composition trunk diff fat free mass</td>
+<td>Body composition the difference in fat free ma...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_diff_fat_mass</td>
+<td>Body composition trunk diff fat mass</td>
+<td>Body composition the difference in fat mass be...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_diff_lean_mass</td>
+<td>Body composition trunk diff lean mass</td>
+<td>Body composition the difference in lean mass b...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_diff_region_percent_fat</td>
+<td>Body composition trunk diff region percent fat</td>
+<td>Body composition the difference in region perc...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_diff_tissue_mass</td>
+<td>Body composition trunk diff tissue mass</td>
+<td>Body composition the difference in tissue mass...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_diff_tissue_percent_fat</td>
+<td>Body composition trunk diff tissue percent fat</td>
+<td>Body composition the difference in tissue perc...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_diff_total_mass</td>
+<td>Body composition trunk diff total mass</td>
+<td>Body composition the difference in total mass ...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_fat_free_mass</td>
+<td>Body composition trunk fat free mass</td>
+<td>Body composition trunk fat free mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_fat_mass</td>
+<td>Body composition trunk fat mass</td>
+<td>Body composition trunk fat mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_lean_mass</td>
+<td>Body composition trunk lean mass</td>
+<td>Body composition trunk lean mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_left_bone_mass</td>
+<td>Body composition trunk left bone mass</td>
+<td>Body composition left trunk side bone mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_left_fat_free_mass</td>
+<td>Body composition trunk left fat free mass</td>
+<td>Body composition left trunk side fat free mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_left_fat_mass</td>
+<td>Body composition trunk left fat mass</td>
+<td>Body composition left trunk side fat mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_left_lean_mass</td>
+<td>Body composition trunk left lean mass</td>
+<td>Body composition left trunk side lean mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_left_region_percent_fat</td>
+<td>Body composition trunk left region percent fat</td>
+<td>Body composition left trunk side region percen...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_left_tissue_mass</td>
+<td>Body composition trunk left tissue mass</td>
+<td>Body composition left trunk side tissue mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_left_tissue_percent_fat</td>
+<td>Body composition trunk left tissue percent fat</td>
+<td>Body composition left trunk side tissue percen...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_left_total_mass</td>
+<td>Body composition trunk left total mass</td>
+<td>Body composition left trunk side total mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_region_percent_fat</td>
+<td>Body composition trunk region percent fat</td>
+<td>Body composition trunk region percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_right_bone_mass</td>
+<td>Body composition trunk right bone mass</td>
+<td>Body composition right trunk side bone mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_right_fat_free_mass</td>
+<td>Body composition trunk right fat free mass</td>
+<td>Body composition right trunk side fat free mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_right_fat_mass</td>
+<td>Body composition trunk right fat mass</td>
+<td>Body composition right trunk side fat mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_right_lean_mass</td>
+<td>Body composition trunk right lean mass</td>
+<td>Body composition right trunk side lean mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_right_region_percent_fat</td>
+<td>Body composition trunk right region percent fat</td>
+<td>Body composition right trunk side region perce...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_right_tissue_mass</td>
+<td>Body composition trunk right tissue mass</td>
+<td>Body composition right trunk side tissue mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_right_tissue_percent_fat</td>
+<td>Body composition trunk right tissue percent fat</td>
+<td>Body composition right trunk side tissue perce...</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_right_total_mass</td>
+<td>Body composition trunk right total mass</td>
+<td>Body composition right trunk side total mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_tissue_mass</td>
+<td>Body composition trunk tissue mass</td>
+<td>Body composition trunk tissue mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">body_comp_trunk_tissue_percent_fat</td>
+<td>Body composition trunk tissue percent fat</td>
+<td>Body composition trunk tissue percent fat</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">body_comp_trunk_total_mass</td>
+<td>Body composition trunk total mass</td>
+<td>Body composition trunk total mass</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>gram</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">total_scan_dose</td>
+<td>Total scan dose</td>
+<td>Radiation dose of the entire scan</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>μGy</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">total_scan_sat_area</td>
+<td>Total scan subcutaneous adipose tissue area</td>
+<td>Total scan subcutaneous adipose tissue (SAT) area</td>
+<td>NaN</td>
+<td>/body_composition/body_composition.parquet</td>
+<td>Continuous</td>
+<td>cm^2</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2020-06-09</td>
+<td>float</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">total_scan_sat_mass</td>
@@ -602,7 +2906,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 
-<p>155 rows × 13 columns</p>
 </div>
 </div>
 </div>

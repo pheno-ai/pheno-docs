@@ -379,15 +379,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>urs</code>: Segal Lab relative abundance.</li>
 <li><code>metaphlan_*</code>: 8 tables with MetaPhlAn 4 relative abundances, separated by taxonomic levels.</li>
 </ul>
-<div class="cell">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:48:43.404439Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:48:43.404238Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:48:44.288993Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:48:44.288460Z&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pheno_utils <span class="im">import</span> PhenoLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:48:44.290677Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:48:44.290561Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:49:14.203567Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:49:14.202760Z&quot;}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'gut_microbiome'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>DataLoader for gut_microbiome with
-45 fields
+46 fields
 2 tables: ['gut_microbiome', 'age_sex']</code></pre>
 </div>
 </div>
@@ -395,9 +395,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-dictionary" class="level1">
 <h1>Data dictionary</h1>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:49:14.213667Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:49:14.213374Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:49:14.227623Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:49:14.227244Z&quot;}" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -502,6 +502,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>string</td>
 </tr>
 <tr class="odd">
+<td data-quarto-table-cell-role="th">urs_metadata_parquet</td>
+<td>URS abundances metadata</td>
+<td>Organism classification and taxonomy</td>
+<td>NaN</td>
+<td>/gut_microbiome/gut_microbiome.parquet</td>
+<td>Binary string</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Molecular</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
 <td data-quarto-table-cell-role="th">urs_abundance_parquet</td>
 <td>URS abundances</td>
 <td>Aggregated abundance (mapped to the URS refere...</td>
@@ -517,7 +533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>category</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">metaphlan_abundance_kingdom_parquet</td>
 <td>MetaPhlAn 4 abundance (kingdom)</td>
 <td>Aggregated abundance (MetaPhlAn 4) at the king...</td>
@@ -533,7 +549,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>category</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">metaphlan_abundance_phylum_parquet</td>
 <td>MetaPhlAn 4 abundance (phylum)</td>
 <td>Aggregated abundance (MetaPhlAn 4) at the phyl...</td>
@@ -549,7 +565,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>category</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">metaphlan_abundance_class_parquet</td>
 <td>MetaPhlAn 4 abundance (class)</td>
 <td>Aggregated abundance (MetaPhlAn 4) at the clas...</td>
@@ -565,7 +581,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>category</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">metaphlan_abundance_order_parquet</td>
 <td>MetaPhlAn 4 abundance (order)</td>
 <td>Aggregated abundance (MetaPhlAn 4) at the orde...</td>
@@ -581,7 +597,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>category</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">metaphlan_abundance_family_parquet</td>
 <td>MetaPhlAn 4 abundance (famiily)</td>
 <td>Aggregated abundance (MetaPhlAn 4) at the fami...</td>
@@ -597,7 +613,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>category</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">metaphlan_abundance_genus_parquet</td>
 <td>MetaPhlAn 4 abundance (genus)</td>
 <td>Aggregated abundance (MetaPhlAn 4) at the genu...</td>
@@ -613,7 +629,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>category</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">metaphlan_abundance_species_parquet</td>
 <td>MetaPhlAn 4 abundance (species)</td>
 <td>Aggregated abundance (MetaPhlAn 4) at the spec...</td>
@@ -629,7 +645,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>category</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">metaphlan_abundance_strain_parquet</td>
 <td>MetaPhlAn 4 abundance (strain)</td>
 <td>Aggregated abundance (MetaPhlAn 4) at the stra...</td>
@@ -645,7 +661,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>category</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">raw_fastq</td>
 <td>Raw FASTQ path</td>
 <td>The original FASTQ file</td>
@@ -661,7 +677,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">trimmed_fastq</td>
 <td>Post QC FASTQ path</td>
 <td>FASTQ file post Trimmomatic (removing adaptors...</td>
@@ -677,7 +693,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">non_human_fastq</td>
 <td>Non-human FASTQ path</td>
 <td>FASTQ file for non-human reads (Post Trimmomatic)</td>
@@ -693,7 +709,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">fastqc_html</td>
 <td>FASTQC HTML path</td>
 <td>FASTQC Output for Post QC FASTQ - HTML</td>
@@ -709,7 +725,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">fastqc_zip</td>
 <td>FASTQC zip path</td>
 <td>FASTQC Output for Post QC FASTQ - Zip</td>
@@ -725,7 +741,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">human_variants_bed</td>
 <td>Human variants plink (BED)</td>
 <td>Plink file containing all the human alleles ex...</td>
@@ -741,7 +757,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">human_variants_bim</td>
 <td>Human variants plink (BIM)</td>
 <td>Plink file containing all the human variants e...</td>
@@ -757,7 +773,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">human_variants_fam</td>
 <td>Human variants plink (FAM)</td>
 <td>Plink file containing only the specific sample</td>
@@ -773,7 +789,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">urs_mapped_bam</td>
 <td>URS mapped bam path</td>
 <td>Reads aligned to the URS reference</td>
@@ -789,7 +805,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">urs_mapped_single_bacteria_per_read_bam</td>
 <td>URS mapped bam path (best match only)</td>
 <td>Reads aligned to the URS reference, but only t...</td>
@@ -805,7 +821,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">urs_mapped_metrics_txt</td>
 <td>URS Bowtie2 metric file path</td>
 <td>Bowtie2 metric output for the URS alignment</td>
@@ -821,7 +837,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">urs_mapped_results_csv</td>
 <td>URS abundances path</td>
 <td>URS relative abundances</td>
@@ -837,7 +853,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">metaphlan4_results_txt</td>
 <td>MetaPhlAn 4 abundance path</td>
 <td>MetaPhlAn4 relative abundances</td>
@@ -853,7 +869,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">duplicate_reads_count</td>
 <td>Duplicate reads count</td>
 <td>#Reads that are exact duplciates</td>
@@ -869,7 +885,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>int</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">excessive_duplicate_reads</td>
 <td>Excessive duplicate reads</td>
 <td>Whether the sample contain an abnormal amount ...</td>
@@ -885,7 +901,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>bool</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">raw_read_count</td>
 <td>Raw reads count</td>
 <td>#Reads in the original FASTQ</td>
@@ -901,7 +917,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>int</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">trimmed_read_count</td>
 <td>Post QC reads count</td>
 <td>#Reads in the Post QC FASTQ</td>
@@ -917,7 +933,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>int</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">human_variant_count</td>
 <td>Detectable human variants count</td>
 <td>#Variants in the Plink files</td>
@@ -933,7 +949,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>int</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">human_read_count</td>
 <td>Human reads count</td>
 <td>#Reads successfuly aligned to humans</td>
@@ -949,7 +965,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>int</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">urs_mapped_read_count</td>
 <td>URS mapped reads count</td>
 <td>#Reads mapped to the URS reference panel (not ...</td>
@@ -965,7 +981,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>int</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">wgs_compare_error_total</td>
 <td>WGS vs stool compare - #Errors</td>
 <td>#Errors when comparing homozygous SNPs found i...</td>
@@ -981,7 +997,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>int</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">wgs_compare_errors_percent</td>
 <td>WGS vs stool compare - %Errors</td>
 <td>%Errors when comparing homozygous SNPs found i...</td>
@@ -997,7 +1013,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>float</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">wgs_compare_count_homozygous</td>
 <td>WGS vs stool compare - #Homozygous SNPs</td>
 <td>#homozygous SNPs found in stool vs WGS</td>
@@ -1013,7 +1029,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>int</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">wgs_compare_count_variants</td>
 <td>WGS vs stool compare - #SNPs</td>
 <td>#SNPs found in stool vs WGS</td>
@@ -1029,7 +1045,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>int</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">wgs_compare_pass</td>
 <td>WGS vs stool compare - Passed Validation</td>
 <td>Passed Stool Vs WGS validation</td>
@@ -1045,7 +1061,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>category</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">raw_read_length</td>
 <td>Legnth of raw reads</td>
 <td>Length of reads (from the Raw FASTQ file)</td>
@@ -1061,7 +1077,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>int</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">single_ended</td>
 <td>Is single ended</td>
 <td>Single ended (SE) or pair ended (PE)</td>
@@ -1077,7 +1093,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>bool</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">is_genotek</td>
 <td>Vial type</td>
 <td>Type of vial used for stool collecting</td>
@@ -1093,7 +1109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>bool</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">run_name</td>
 <td>Batch name</td>
 <td>The run-name of the sample's batch(s)</td>
@@ -1109,7 +1125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>NaN</td>
 <td>string</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">wgs_dna_code</td>
 <td>WGS DNA code</td>
 <td>WGS DNA code</td>

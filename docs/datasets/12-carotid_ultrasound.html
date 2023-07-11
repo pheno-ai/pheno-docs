@@ -366,13 +366,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-availability" class="level3">
 <h3 class="anchored" data-anchor-id="data-availability">Data availability:</h3>
 <p>The information is stored in 1 parquet file: <code>carotid_ultrasound.parquet</code></p>
-<div class="cell">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:48:31.595320Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:48:31.595154Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:48:32.548389Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:48:32.547764Z&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pheno_utils <span class="im">import</span> PhenoLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:48:32.552794Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:48:32.552648Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:48:41.250821Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:48:41.249507Z&quot;}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'carotid_ultrasound'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>DataLoader for carotid_ultrasound with
 11 fields
 2 tables: ['carotid_ultrasound', 'age_sex']</code></pre>
@@ -382,10 +382,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-dictionary" class="level1">
 <h1>Data dictionary</h1>
-<p>For some datasets, we can also take a look at the data dictionary</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span>.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:48:41.254926Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:48:41.254373Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:48:41.267345Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:48:41.266925Z&quot;}" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -497,6 +496,70 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>/carotid_ultrasound/carotid_ultrasound.parquet</td>
 <td>Continuous</td>
 <td>mm</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>tabular</td>
+<td>2021-08-16</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">imt_window_width_left</td>
+<td>IMT window width (left)</td>
+<td>Indicates the width if the box of interest</td>
+<td>NaN</td>
+<td>/carotid_ultrasound/carotid_ultrasound.parquet</td>
+<td>Continuous</td>
+<td>mm</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>tabular</td>
+<td>2021-08-16</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">imt_window_width_right</td>
+<td>IMT window width (right)</td>
+<td>Indicates the width if the box of interest</td>
+<td>NaN</td>
+<td>/carotid_ultrasound/carotid_ultrasound.parquet</td>
+<td>Continuous</td>
+<td>mm</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>tabular</td>
+<td>2021-08-16</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">imt_fit_left</td>
+<td>Intima media thickness Fit (left)</td>
+<td>Percentage of the box of interest for which th...</td>
+<td>NaN</td>
+<td>/carotid_ultrasound/carotid_ultrasound.parquet</td>
+<td>Continuous</td>
+<td>%</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>tabular</td>
+<td>2021-08-16</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">imt_fit_right</td>
+<td>Intima media thickness Fit (right)</td>
+<td>Percentage of the box of interest for which th...</td>
+<td>NaN</td>
+<td>/carotid_ultrasound/carotid_ultrasound.parquet</td>
+<td>Continuous</td>
+<td>%</td>
 <td>NaN</td>
 <td>Data</td>
 <td>Single</td>

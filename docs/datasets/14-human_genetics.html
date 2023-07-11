@@ -365,17 +365,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="data-availability">Data availability:</h3>
 <p>The information is stored in a number of statistics parquet files: - <code>main.parquet</code>: sample metadata, including QC statistics, paths to PLINK variant files (raw and post-QC), and principal components (PCs). - <code>variant_qc.parquet</code>: variant QC statistics. - <code>relatives/plink_ibs.parquet</code>: IBS calculated by PLINK for pairs of participants. - <code>relatives/king_kinship.parquet</code>: King kinship coefficients for pairs of participants.</p>
 <p>And a PLINK text file <code>pca/eigenvec.var</code> containing the principal component loadings.</p>
-<div class="cell">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:49:15.819030Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:49:15.818844Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:49:17.060728Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:49:17.059882Z&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pheno_utils <span class="im">import</span> PhenoLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We load the data but:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># - Skip the king matrix (large and slow to load)</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># - Skip the eigenvectors of the PCA (PLINK output, not a parquet file)</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'human_genetics'</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:49:17.063232Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:49:17.063088Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:49:50.763477Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:49:50.762191Z&quot;}" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'human_genetics'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>DataLoader for human_genetics with
 190 fields
 3 tables: ['human_genetics', 'pca', 'age_sex']</code></pre>
@@ -385,10 +381,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-dictionary" class="level1">
 <h1>Data dictionary</h1>
-<p>For some datasets, we can also take a look at the data dictionary</p>
-<div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span>.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:49:50.773191Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:49:50.772036Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:49:50.808201Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:49:50.807768Z&quot;}" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -507,6 +502,2934 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Compressed binary file</td>
 <td>NaN</td>
 <td>string</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">gencove_bai</td>
+<td>BAM indices</td>
+<td>Per sample indices for BAM file</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed file</td>
+<td>NaN</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">gencove_vcf</td>
+<td>Imputation Variant Call Format (VCF)</td>
+<td>Per sample VCF, a text file storing imputed ge...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed text file</td>
+<td>NaN</td>
+<td>string</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">genecov_qc_bases</td>
+<td>Bases sequenced</td>
+<td>number of total bases sequenced. from genecov ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Integer</td>
+<td>Count</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>int</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">genecov_qc_bases_dedup</td>
+<td>Deduplicated bases</td>
+<td>number of deduplicated bases. from genecov qc ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Integer</td>
+<td>Count</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>int</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">gencove_qc_bases_dedup_mapped</td>
+<td>Deduplicated bases aligned</td>
+<td>number of deduplicated bases that have aligned...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Integer</td>
+<td>Count</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>int</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">genecov_qc_effective_coverage</td>
+<td>Effective coverage</td>
+<td>effective coverage. from genecov qc file</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Continuous</td>
+<td>Precent</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">genecov_qc_fraction_contamination</td>
+<td>DNA contamination</td>
+<td>contamination by DNA from another sample of th...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Continuous</td>
+<td>Precent</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">genecov_qc_snps</td>
+<td>SNPs covered</td>
+<td>number of variants in reference panel that are...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Integer</td>
+<td>Count</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>int</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">genecov_qc_format_passed</td>
+<td>Passed FASTQ format validity</td>
+<td>Indicates proper formatting of the input FASTQ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">genecov_qc_r1_eq_r2_passed</td>
+<td>Passed paired-end count</td>
+<td>Indicates number of bases in R1 file equal to ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">genecov_qc_r1_r2_ids_match_passed</td>
+<td>Passed paired-end match</td>
+<td>Indicates R1 read identifiers match R2 read id...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">genecov_qc_bases_passed</td>
+<td>Passed Bases sequenced</td>
+<td>Indicates number of total bases sequenced grea...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">genecov_qc_bases_dedup_passed</td>
+<td>Passed Deduplicated bases</td>
+<td>Indicates number of deduplicated bases greater...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">genecov_qc_bases_dedup_mapped_passed</td>
+<td>Passed Deduplicated bases aligned</td>
+<td>Indicates number of deduplicated bases aligned...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">genecov_qc_effective_coverage_passed</td>
+<td>Passed Effective coverage</td>
+<td>Indicates effective coverage greater than 0. f...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">genecov_qc_fraction_contamination_passed</td>
+<td>Passed DNA contamination</td>
+<td>Indicates contamination by DNA less than 0.06....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">genecov_qc_snps_passed</td>
+<td>Passed SNPs covered</td>
+<td>Indicates number of variants covered by at lea...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">heterozygosity_proportion</td>
+<td>Heterozygosity proportion</td>
+<td>Estimated heterozygosity proportion across a s...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Continuous</td>
+<td>Precent</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pass_het_check</td>
+<td>Passed Heterozygosity proportion</td>
+<td>Indicates heterozygosity proportion is less th...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>bool</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">sample_qc_gp_pass_rate</td>
+<td>Genotype Probabilities pass rate</td>
+<td>Proportion of genotypes with maximum GP greate...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Continuous</td>
+<td>Precent</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">sample_qc_gp_pass_check</td>
+<td>Passed Genotype Probabilities</td>
+<td>Indicates proportion of GP greater than 0.9 is...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>bool</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">genetic_sex</td>
+<td>DNA sex</td>
+<td>Sex as determined by the percentage of read-al...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>int</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_x_proportion</td>
+<td>Proportion of alignment to chromosome X</td>
+<td>percentage of reads aligned to chromosome X</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Continuous</td>
+<td>Precent</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_y_proportion</td>
+<td>Proportion of alignment to chromosome Y</td>
+<td>percentage of reads aligned to chromosome Y</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Continuous</td>
+<td>Precent</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">sample_qc_gender_match_check</td>
+<td>Passed gender check</td>
+<td>Indicates inferred_gender and submitted_gender...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>bool</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">variants_qc_parquet</td>
+<td>Variants QC report</td>
+<td>QC report for each SNP</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">relatives</td>
+<td>Relatives based on IBD estimation</td>
+<td>List of second and first degree relatives acco...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">relationship_king_tsv</td>
+<td>KING kingship file</td>
+<td>KING kinship coefficient matrix for pairs of p...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">relationship_ibs_txt</td>
+<td>PLINK IBS file</td>
+<td>PLINK IBS coefficient matrix for paris of part...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_1_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for chr1</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_1_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr1</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_1_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for chr1</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_2_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for chr2</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_2_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr2</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_2_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for chr2</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_3_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for chr3</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_3_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr3</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_3_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for chr3</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_4_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for chr4</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_4_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr4</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_4_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for chr4</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_5_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for chr5</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_5_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr5</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_5_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for chr5</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_6_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for chr6</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_6_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr6</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_6_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for chr6</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_7_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for chr7</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_7_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr7</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_7_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for chr7</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_8_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for chr8</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_8_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr8</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_8_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for chr8</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_9_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for chr9</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_9_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr9</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_9_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for chr9</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_10_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_10_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr10</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_10_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for c...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_11_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_11_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr11</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_11_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for c...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_12_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_12_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr12</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_12_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for c...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_13_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_13_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr13</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_13_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for c...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_14_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_14_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr14</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_14_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for c...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_15_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_15_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr15</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_15_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for c...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_16_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_16_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr16</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_16_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for c...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_17_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_17_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr17</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_17_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for c...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_18_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_18_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr18</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_18_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for c...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_19_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_19_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr19</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_19_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for c...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_20_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_20_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr20</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_20_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for c...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_21_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_21_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr21</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_21_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for c...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_22_raw_bed</td>
+<td>PLINK BED file for the Raw genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_22_raw_fam</td>
+<td>PLINK FAM file accompanying Raw .bed for chr22</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_22_raw_bim</td>
+<td>PLINK BIM file for the Raw genotype data for c...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_1_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for chr1</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_1_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr1</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_1_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_2_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for chr2</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_2_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr2</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_2_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_3_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for chr3</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_3_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr3</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_3_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_4_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for chr4</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_4_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr4</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_4_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_5_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for chr5</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_5_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr5</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_5_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_6_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for chr6</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_6_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr6</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_6_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_7_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for chr7</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_7_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr7</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_7_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_8_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for chr8</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_8_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr8</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_8_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_9_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for chr9</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_9_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr9</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_9_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_10_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_10_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr10</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_10_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_11_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_11_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr11</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_11_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_12_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_12_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr12</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_12_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_13_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_13_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr13</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_13_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_14_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_14_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr14</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_14_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_15_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_15_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr15</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_15_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_16_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_16_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr16</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_16_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_17_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_17_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr17</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_17_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_18_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_18_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr18</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_18_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_19_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_19_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr19</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_19_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_20_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_20_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr20</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_20_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_21_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_21_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr21</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_21_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_22_postqc_bed</td>
+<td>PLINK BED file for post QC genotype data for c...</td>
+<td>Raw genotype calls (per chromosome) in binary ...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Compressed binary file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">chr_22_postqc_fam</td>
+<td>PLINK FAM file accompanying QC .bed for chr22</td>
+<td>PLINK sample information file accompanying a ....</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">chr_22_postqc_bim</td>
+<td>PLINK BIM file for the post QC genotype data f...</td>
+<td>PLINK variant information file (per chromosome...</td>
+<td>NaN</td>
+<td>/human_genetics/human_genetics.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Text file</td>
+<td>NaN</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">pc1</td>
+<td>Principal component 1</td>
+<td>Score for projected principal component 1</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pc2</td>
+<td>Principal component 2</td>
+<td>Score for projected principal component 2</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">pc3</td>
+<td>Principal component 3</td>
+<td>Score for projected principal component 3</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pc4</td>
+<td>Principal component 4</td>
+<td>Score for projected principal component 4</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">pc5</td>
+<td>Principal component 5</td>
+<td>Score for projected principal component 5</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pc6</td>
+<td>Principal component 6</td>
+<td>Score for projected principal component 6</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">pc7</td>
+<td>Principal component 7</td>
+<td>Score for projected principal component 7</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pc8</td>
+<td>Principal component 8</td>
+<td>Score for projected principal component 8</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">pc9</td>
+<td>Principal component 9</td>
+<td>Score for projected principal component 9</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pc10</td>
+<td>Principal component 10</td>
+<td>Score for projected principal component 10</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">pc11</td>
+<td>Principal component 11</td>
+<td>Score for projected principal component 11</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pc12</td>
+<td>Principal component 12</td>
+<td>Score for projected principal component 12</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">pc13</td>
+<td>Principal component 13</td>
+<td>Score for projected principal component 13</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pc14</td>
+<td>Principal component 14</td>
+<td>Score for projected principal component 14</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">pc15</td>
+<td>Principal component 15</td>
+<td>Score for projected principal component 15</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pc16</td>
+<td>Principal component 16</td>
+<td>Score for projected principal component 16</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">pc17</td>
+<td>Principal component 17</td>
+<td>Score for projected principal component 17</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pc18</td>
+<td>Principal component 18</td>
+<td>Score for projected principal component 18</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">pc19</td>
+<td>Principal component 19</td>
+<td>Score for projected principal component 19</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pc20</td>
+<td>Principal component 20</td>
+<td>Score for projected principal component 20</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">used_in_pca_calculation</td>
+<td>Included in principal component analysis</td>
+<td>Indicates samples was in the input for princip...</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>Categorical (single)</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>bool</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">pca_loadings_tsv</td>
+<td>Principal component loading file</td>
+<td>Principal component loading file</td>
+<td>NaN</td>
+<td>/human_genetics/pca/pca.parquet</td>
+<td>String</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10k</td>
+<td>Tabular</td>
+<td>NaN</td>
+<td>category</td>
 </tr>
 </tbody>
 </table>

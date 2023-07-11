@@ -375,14 +375,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-availability" class="level3">
 <h3 class="anchored" data-anchor-id="data-availability">Data availability:</h3>
 <p>The information is stored in 1 parquet file: <code>vascular_health.parquet</code></p>
-<div class="cell">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:47:14.831307Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:47:14.830891Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:47:16.431944Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:47:16.428637Z&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pheno_utils <span class="im">import</span> PhenoLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'vascular_health'</span>, unique_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:47:16.477995Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:47:16.476184Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:47:24.864471Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:47:24.863178Z&quot;}" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'vascular_health'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>DataLoader for vascular_health with
 13 fields
 2 tables: ['vascular_health', 'age_sex']</code></pre>
@@ -392,10 +391,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-dictionary" class="level1">
 <h1>Data dictionary</h1>
-<p>For some datasets, we can also take a look at the data dictionary</p>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:47:24.873508Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:47:24.872314Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:47:24.896134Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:47:24.895709Z&quot;}" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
