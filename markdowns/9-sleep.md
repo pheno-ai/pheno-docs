@@ -13,4 +13,4 @@ The device's algorithms provide 3 main indices for diagnosis of OSA: Apnea/Hypop
 The WatchPAT device is given to participants during the visit to the clinical testing center who then record 3 nights of sleep at home during the following two weeks (Figure 4). The recorded tested nights should reflect the usual sleeping regimen / typical bedtime (for example, not after exceeding alcohol consumption).
 
 ### Data availability:
-The information is stored in 2 main statistics parquet files: `main.parquet`, `hrv.parquet`; In a sleep events file `events.parquet` and in multiple time series parquets / EDF files containing sensor channels for each night of logging.
+The information is stored in 2 main statistics parquet files: `sleep.parquet`, `hrv.parquet`; In multiple events parquets and in multiple time series parquets / EDF files containing sensor channels for each night of logging.
