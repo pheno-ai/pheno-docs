@@ -179,7 +179,7 @@
     "href": "pheno_utils.html",
     "title": "pheno-utils",
     "section": "",
-    "text": "A pip-installable python library for Dataloader and analysis tools.\nSee full documentation\n\n\npip install pheno_utils\n\n\n\n\nPhenoLoader / DataLoader\n\nFull access to data fields in a specific dataset\nAccess to tabular features\nAccess to raw data (images, time series, genetic variants)\nAccess to field metadata\n\nMetaLoader\n\nGet an overview of all datasets and search throughout datasets\nLoad tabular features from multiple datasets\nLoad paths to raw data from multiple datasets\n\n\n\n\n\nExamples:\nfrom pheno_utils import PhenoLoader\n\ndl = PhenoLoader(\"fundus\")\nfrom pheno_utils import MetaLoader\n\nml = MetaLoader()"
+    "text": "A pip-installable python library for Dataloader and analysis tools.\nSee full documentation\n\n\npip install pheno_utils\n\n\n\n\nPhenoLoader\n\nFull access to data fields in a specific dataset\nAccess to tabular features\nAccess to raw data (images, time series, genetic variants)\nAccess to field metadata\n\nMetaLoader\n\nGet an overview of all datasets and search throughout datasets\nLoad tabular features from multiple datasets\nLoad paths to raw data from multiple datasets\n\n\n\n\n\nExamples:\nfrom pheno_utils import PhenoLoader\n\ndl = PhenoLoader(\"fundus\")\nfrom pheno_utils import MetaLoader\n\nml = MetaLoader()"
   },
   {
     "objectID": "pheno_utils.html#install",
@@ -193,7 +193,7 @@
     "href": "pheno_utils.html#features-data-loaders",
     "title": "pheno-utils",
     "section": "",
-    "text": "PhenoLoader / DataLoader\n\nFull access to data fields in a specific dataset\nAccess to tabular features\nAccess to raw data (images, time series, genetic variants)\nAccess to field metadata\n\nMetaLoader\n\nGet an overview of all datasets and search throughout datasets\nLoad tabular features from multiple datasets\nLoad paths to raw data from multiple datasets"
+    "text": "PhenoLoader\n\nFull access to data fields in a specific dataset\nAccess to tabular features\nAccess to raw data (images, time series, genetic variants)\nAccess to field metadata\n\nMetaLoader\n\nGet an overview of all datasets and search throughout datasets\nLoad tabular features from multiple datasets\nLoad paths to raw data from multiple datasets"
   },
   {
     "objectID": "pheno_utils.html#how-to-use",
