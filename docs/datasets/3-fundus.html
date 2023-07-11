@@ -371,13 +371,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>All tabular information is stored in a main parquet file: <code>fundus.parquet</code></li>
 <li>Image files including segmentations are stored in subfolders and mapped in the main parqet file.</li>
 </ul>
-<div class="cell">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:36:34.681023Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:36:34.679987Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:36:35.694821Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:36:35.694342Z&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pheno_utils <span class="im">import</span> PhenoLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:36:35.696494Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:36:35.696362Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:37:06.641211Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:37:06.639544Z&quot;}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'fundus'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>DataLoader for fundus with
 76 fields
 3 tables: ['fundus', 'microvasculature', 'age_sex']</code></pre>
@@ -387,9 +387,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-dictionary" class="level1">
 <h1>Data dictionary</h1>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:37:06.650860Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:37:06.649709Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:37:06.681245Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:37:06.680683Z&quot;}" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -510,22 +510,1030 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>datetime64[ns, Asia/Jerusalem]</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
+<td data-quarto-table-cell-role="th">device_software_version</td>
+<td>Software version</td>
+<td>Device software Version</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>string</td>
 </tr>
 <tr class="odd">
+<td data-quarto-table-cell-role="th">image_view_type_left</td>
+<td>Fundus image view type (left)</td>
+<td>Nasal or central view (left)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Categorical (multiple)</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>string</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">image_view_type_right</td>
+<td>Fundus image view type (right)</td>
+<td>Nasal or central view (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Categorical (multiple)</td>
+<td>Text</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">preprocessing_centre_width_left</td>
+<td>preprocessing centre width (left)</td>
+<td>preprocessing centre width (left)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">preprocessing_centre_height_left</td>
+<td>preprocessing centre height (left)</td>
+<td>preprocessing centre height (left)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">preprocessing_radius_left</td>
+<td>preprocessing circle radius (left)</td>
+<td>preprocessing circle radius (left)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">preprocessing_scale_resolution_left</td>
+<td>preprocessing scale resolution (left)</td>
+<td>preprocessing scale resolution (left)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">preprocessing_centre_width_right</td>
+<td>preprocessing centre width (left)</td>
+<td>preprocessing centre width (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">preprocessing_centre_height_right</td>
+<td>preprocessing centre height (left)</td>
+<td>preprocessing centre height (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">preprocessing_radius_right</td>
+<td>preprocessing circle radius (left)</td>
+<td>preprocessing circle radius (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">preprocessing_scale_resolution_right</td>
+<td>preprocessing scale resolution (left)</td>
+<td>preprocessing scale resolution (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">fundus_image_quality_prediction_right</td>
+<td>Fundus image quality prediction (right)</td>
+<td>Fundus image quality prediction (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>category</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">fundus_image_quality_good_score_right</td>
+<td>Fundus image quality good score (right)</td>
+<td>Fundus image quality good score (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Probability</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">fundus_image_quality_usable_score_right</td>
+<td>Fundus image quality usable score (right)</td>
+<td>Fundus image quality usable score (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Probability</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">fundus_image_quality_bad_score_right</td>
+<td>Fundus image quality bad score (right)</td>
+<td>Fundus image quality bad score (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Probability</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">fundus_image_quality_sd_good_right</td>
+<td>Fundus image quality SD good (right)</td>
+<td>Fundus image quality SD good (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Probability</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">fundus_image_quality_sd_usable_right</td>
+<td>Fundus image quality SD usable (right)</td>
+<td>Fundus image quality SD usable (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Probability</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">fundus_image_quality_sd_bad_right</td>
+<td>Fundus image quality SD bad (right)</td>
+<td>Fundus image quality SD bad (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Probability</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">fundus_image_quality_prediction_left</td>
+<td>Fundus image quality prediction (right)</td>
+<td>Fundus image quality prediction (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Boolean</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>category</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">fundus_image_quality_good_score_left</td>
+<td>Fundus image quality good score (right)</td>
+<td>Fundus image quality good score (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Probability</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">fundus_image_quality_usable_score_left</td>
+<td>Fundus image quality usable score (right)</td>
+<td>Fundus image quality usable score (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Probability</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">fundus_image_quality_bad_score_left</td>
+<td>Fundus image quality bad score (right)</td>
+<td>Fundus image quality bad score (right)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Probability</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">fundus_image_quality_sd_good_left</td>
+<td>Fundus image quality SD good (left)</td>
+<td>Fundus image quality SD good (left)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Probability</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">fundus_image_quality_sd_usable_left</td>
+<td>Fundus image quality SD usable (left)</td>
+<td>Fundus image quality SD usable (left)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Probability</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">fundus_image_quality_sd_bad_left</td>
+<td>Fundus image quality SD bad (left)</td>
+<td>Fundus image quality SD bad (left)</td>
+<td>NaN</td>
+<td>/fundus/fundus.parquet</td>
+<td>Continuous</td>
+<td>Probability</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">fundus_image_binary_artery_segmentation_left</td>
+<td>Fundus image binary artery segmentation (left)</td>
+<td>Fundus image binary artery segmentation (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Text</td>
+<td>None</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10K</td>
+<td>image</td>
+<td>2021-02-17</td>
+<td>string</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">fundus_image_binary_artery_segmentation_right</td>
+<td>Fundus image binary artery segmentation (right)</td>
+<td>Fundus image binary artery segmentation (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Text</td>
+<td>None</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10K</td>
+<td>image</td>
+<td>2021-02-17</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">fundus_image_binary_vein_segmentation_left</td>
+<td>Fundus image binary vein segmentation (left)</td>
+<td>Fundus image binary vein segmentation (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Text</td>
+<td>None</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10K</td>
+<td>image</td>
+<td>2021-02-17</td>
+<td>string</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">fundus_image_binary_vein_segmentation_right</td>
+<td>Fundus image binary vein segmentation (right)</td>
+<td>Fundus image binary vein segmentation (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Text</td>
+<td>None</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10K</td>
+<td>image</td>
+<td>2021-02-17</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">fundus_image_binary_artery_and_vein_classification_left</td>
+<td>Fundus image binary artery and vein classifica...</td>
+<td>Fundus image binary artery and vein classifica...</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Text</td>
+<td>None</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10K</td>
+<td>image</td>
+<td>2021-02-17</td>
+<td>string</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">fundus_image_binary_artery_and_vein_classification_right</td>
+<td>Fundus image binary artery and vein classifica...</td>
+<td>Fundus image binary artery and vein classifica...</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Text</td>
+<td>None</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10K</td>
+<td>image</td>
+<td>2021-02-17</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">fundus_image_binary_vessel_segmentation_left</td>
+<td>Fundus image binary vessel segmentation (left)</td>
+<td>Fundus image binary vessel segmentation (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Text</td>
+<td>None</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10K</td>
+<td>image</td>
+<td>2021-02-17</td>
+<td>string</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">fundus_image_binary_vessel_segmentation_right</td>
+<td>Fundus image binary vessel segmentation (right)</td>
+<td>Fundus image binary vessel segmentation (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Text</td>
+<td>None</td>
+<td>NaN</td>
+<td>Bulk</td>
+<td>Single</td>
+<td>10K</td>
+<td>image</td>
+<td>2021-02-17</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">fractal_dimension_left</td>
+<td>Fractal dimension (left)</td>
+<td>Fractal dimension (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">vessel_density_left</td>
+<td>Vessel density (left)</td>
+<td>Vessel density (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>density</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">average_width_left</td>
+<td>Average width (left)</td>
+<td>Average width (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>pixels</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">distance_tortuosity_left</td>
+<td>Distance tortuosity (left)</td>
+<td>Distance tortuosity (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">squared_curvature_tortuosity_left</td>
+<td>Squared curvature tortuosity (left)</td>
+<td>Squared curvature tortuosity (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">tortuosity_density_left</td>
+<td>Tortuosity density (left)</td>
+<td>Tortuosity density (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>density</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">artery_fractal_dimension_left</td>
+<td>Artery fractal dimension (left)</td>
+<td>Artery fractal dimension (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">artery_vessel_density_left</td>
+<td>Artery vessel density (left)</td>
+<td>Artery vessel density (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>density</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">artery_average_width_left</td>
+<td>Artery average width (left)</td>
+<td>Artery average width (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>pixels</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">artery_distance_tortuosity_left</td>
+<td>Artery distance tortuosity (left)</td>
+<td>Artery distance tortuosity (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">artery_squared_curvature_tortuosity_left</td>
+<td>Artery squared curvature tortuosity (left)</td>
+<td>Artery squared curvature tortuosity (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">artery_tortuosity_density_left</td>
+<td>Artery tortuosity density (left)</td>
+<td>Artery tortuosity density (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>density</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">vein_fractal_dimension_left</td>
+<td>Vein fractal dimension (left)</td>
+<td>Vein fractal dimension (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">vein_vessel_density_left</td>
+<td>Vein vessel density (left)</td>
+<td>Vein vessel density (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>density</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">vein_average_width_left</td>
+<td>Vein average width (left)</td>
+<td>Vein average width (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>pixels</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">vein_distance_tortuosity_left</td>
+<td>Vein distance tortuosity (left)</td>
+<td>Vein distance tortuosity (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">vein_squared_curvature_tortuosity_left</td>
+<td>Vein squared curvature tortuosity (left)</td>
+<td>Vein squared curvature tortuosity (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">vein_tortuosity_density_left</td>
+<td>Vein tortuosity density (left)</td>
+<td>Vein tortuosity density (left)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>density</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">fractal_dimension_right</td>
+<td>Fractal dimension (right)</td>
+<td>Fractal dimension (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">vessel_density_right</td>
+<td>Vessel density (right)</td>
+<td>Vessel density (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>density</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">average_width_right</td>
+<td>Average width (right)</td>
+<td>Average width (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>pixels</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">distance_tortuosity_right</td>
+<td>Distance tortuosity (right)</td>
+<td>Distance tortuosity (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">squared_curvature_tortuosity_right</td>
+<td>Squared curvature tortuosity (right)</td>
+<td>Squared curvature tortuosity (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">tortuosity_density_right</td>
+<td>Tortuosity density (right)</td>
+<td>Tortuosity density (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>density</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">artery_fractal_dimension_right</td>
+<td>Artery fractal dimension (right)</td>
+<td>Artery fractal dimension (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">artery_vessel_density_right</td>
+<td>Artery vessel density (right)</td>
+<td>Artery vessel density (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>density</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">artery_average_width_right</td>
+<td>Artery average width (right)</td>
+<td>Artery average width (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>pixels</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">artery_distance_tortuosity_right</td>
+<td>Artery distance tortuosity (right)</td>
+<td>Artery distance tortuosity (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">artery_squared_curvature_tortuosity_right</td>
+<td>Artery squared curvature tortuosity (right)</td>
+<td>Artery squared curvature tortuosity (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">artery_tortuosity_density_right</td>
+<td>Artery tortuosity density (right)</td>
+<td>Artery tortuosity density (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>density</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">vein_fractal_dimension_right</td>
+<td>Vein fractal dimension (right)</td>
+<td>Vein fractal dimension (right)</td>
+<td>NaN</td>
+<td>/fundus/microvasculature.parquet</td>
+<td>Continuous</td>
+<td>None</td>
+<td>NaN</td>
+<td>Data</td>
+<td>Single</td>
+<td>10K</td>
+<td>tabular</td>
+<td>2021-02-17</td>
+<td>float</td>
+</tr>
+<tr class="even">
 <td data-quarto-table-cell-role="th">vein_vessel_density_right</td>
 <td>Vein vessel density (right)</td>
 <td>Vein vessel density (right)</td>
@@ -541,7 +1549,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>2021-02-17</td>
 <td>float</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">vein_average_width_right</td>
 <td>Vein average width (right)</td>
 <td>Vein average width (right)</td>
@@ -557,7 +1565,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>2021-02-17</td>
 <td>float</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">vein_distance_tortuosity_right</td>
 <td>Vein distance tortuosity (right)</td>
 <td>Vein distance tortuosity (right)</td>
@@ -573,7 +1581,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>2021-02-17</td>
 <td>float</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td data-quarto-table-cell-role="th">vein_squared_curvature_tortuosity_right</td>
 <td>Vein squared curvature tortuosity (right)</td>
 <td>Vein squared curvature tortuosity (right)</td>
@@ -589,7 +1597,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>2021-02-17</td>
 <td>float</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td data-quarto-table-cell-role="th">vein_tortuosity_density_right</td>
 <td>Vein tortuosity density (right)</td>
 <td>Vein tortuosity density (right)</td>
@@ -608,7 +1616,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 
-<p>74 rows × 13 columns</p>
 </div>
 </div>
 </div>
