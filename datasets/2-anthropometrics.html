@@ -367,13 +367,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-availability" class="level3">
 <h3 class="anchored" data-anchor-id="data-availability">Data availability:</h3>
 <p>The information is stored in 1 parquet file: <code>anthropometrics.parquet</code></p>
-<div class="cell">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:36:22.541009Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:36:22.540782Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:36:23.283481Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:36:23.283048Z&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pheno_utils <span class="im">import</span> PhenoLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="2">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:36:23.285157Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:36:23.285027Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:36:32.877159Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:36:32.876000Z&quot;}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'anthropometrics'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>DataLoader for anthropometrics with
 12 fields
 2 tables: ['anthropometrics', 'age_sex']</code></pre>
@@ -383,9 +383,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-dictionary" class="level1">
 <h1>Data dictionary</h1>
-<div class="cell" data-execution_count="3">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:36:32.886002Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:36:32.884971Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:36:32.897662Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:36:32.897217Z&quot;}" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
