@@ -165,7 +165,7 @@
     "href": "faq.html",
     "title": "FAQ",
     "section": "",
-    "text": "FAQ\n\nQ: How can I upload my own data, code, or model to use on the platform?\nA: To upload your own files and use them on the platform, go to the console’s Studies page - add the new link!!, create new study on ‘my studies’, and click the “Upload Files” button on the right side of study name. You can then upload the files and folders that you need, and they will appear in the shared folder on the platform (/home/ec2-user/studies/study_name).  \n\n\n\nQ: Scrolling is too sensitive on my jupyter notebook. How can I fix it??\nA: On Chrome, Go to chrome://flags and Enable Windows Scrolling Personality.  \nQ: How do I enable copy/paste shortcuts on the platform?\nA: In the top left corner of the screen, there is a setting icon (a cogwheel). Click on the “settings” icon in the top left corner Click on “keyboard settings” Enable the 3rd option in the drop down list  \nQ: Can I copy text from inside the platform and paste it outside?\nA: No, that option is not available.  \nQ: I have logged in and opened a Jupyter notebook, how do I make the tab full screen?\nA: Double click the top of the Chrome window which will enlarge the size of the window."
+    "text": "FAQ\n\nQ: How can I upload my own data, code, or model to use on the platform?\nA: To upload your own files and use them on the platform, go to the console’s Studies page, create new study on ‘my studies’, and click the “Upload Files” button on the right side of study name. You can then upload the files and folders that you need, and they will appear in the shared folder on the platform (/home/ec2-user/studies/study_name).  \n\n\n\nQ: Scrolling is too sensitive on my jupyter notebook. How can I fix it??\nA: On Chrome, Go to chrome://flags and Enable Windows Scrolling Personality.  \nQ: How do I enable copy/paste shortcuts on the platform?\nA: In the top left corner of the screen, there is a setting icon (a cogwheel). Click on the “settings” icon in the top left corner Click on “keyboard settings” Enable the 3rd option in the drop down list  \nQ: Can I copy text from inside the platform and paste it outside?\nA: No, that option is not available.  \nQ: I have logged in and opened a Jupyter notebook, how do I make the tab full screen?\nA: Double click the top of the Chrome window which will enlarge the size of the window."
   },
   {
     "objectID": "index.html",
@@ -179,7 +179,7 @@
     "href": "pheno_utils.html",
     "title": "pheno-utils",
     "section": "",
-    "text": "A pip-installable python library for Dataloader and analysis tools.\nSee full documentation\n\n\npip install pheno_utils\n\n\n\n\nPhenoLoader / DataLoader\n\nFull access to data fields in a specific dataset\nAccess to tabular features\nAccess to raw data (images, time series, genetic variants)\nAccess to field metadata\n\nMetaLoader\n\nGet an overview of all datasets and search throughout datasets\nLoad tabular features from multiple datasets\nLoad paths to raw data from multiple datasets\n\n\n\n\n\nExamples:\nfrom pheno_utils import PhenoLoader\n\ndl = PhenoLoader(\"fundus\")\nfrom pheno_utils import MetaLoader\n\nml = MetaLoader()"
+    "text": "A pip-installable python library for Dataloader and analysis tools.\nSee full documentation\n\n\npip install pheno_utils\n\n\n\n\nPhenoLoader\n\nFull access to data fields in a specific dataset\nAccess to tabular features\nAccess to raw data (images, time series, genetic variants)\nAccess to field metadata\n\nMetaLoader\n\nGet an overview of all datasets and search throughout datasets\nLoad tabular features from multiple datasets\nLoad paths to raw data from multiple datasets\n\n\n\n\n\nExamples:\nfrom pheno_utils import PhenoLoader\n\ndl = PhenoLoader(\"fundus\")\nfrom pheno_utils import MetaLoader\n\nml = MetaLoader()"
   },
   {
     "objectID": "pheno_utils.html#install",
@@ -193,7 +193,7 @@
     "href": "pheno_utils.html#features-data-loaders",
     "title": "pheno-utils",
     "section": "",
-    "text": "PhenoLoader / DataLoader\n\nFull access to data fields in a specific dataset\nAccess to tabular features\nAccess to raw data (images, time series, genetic variants)\nAccess to field metadata\n\nMetaLoader\n\nGet an overview of all datasets and search throughout datasets\nLoad tabular features from multiple datasets\nLoad paths to raw data from multiple datasets"
+    "text": "PhenoLoader\n\nFull access to data fields in a specific dataset\nAccess to tabular features\nAccess to raw data (images, time series, genetic variants)\nAccess to field metadata\n\nMetaLoader\n\nGet an overview of all datasets and search throughout datasets\nLoad tabular features from multiple datasets\nLoad paths to raw data from multiple datasets"
   },
   {
     "objectID": "pheno_utils.html#how-to-use",
