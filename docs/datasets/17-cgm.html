@@ -366,11 +366,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The actual glucose measures are stored in multiple parquet files, each file holds the glucose measures for a single CGM connection. <br></p>
 <section id="data-availability" class="level3">
 <h3 class="anchored" data-anchor-id="data-availability">Data availability:</h3>
-<p>The metadata and summary features are stored in 2 main statistics parquet files: <code>main.parquet</code>, <code>daily_iglu.parquet</code>.</p>
-<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:50:28.914132Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:50:28.913957Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:50:29.686579Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:50:29.686151Z&quot;}" data-execution_count="2">
+<p>The metadata and summary features are stored in 3 main statistics parquet files: <code>cgm.parquet</code>, <code>iglu.parquet</code>, <code>iglu_daily.parquet</code>.</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-12T12:07:25.523785Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-12T12:07:25.523586Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-12T12:07:26.349257Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-12T12:07:26.348766Z&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pheno_utils <span class="im">import</span> PhenoLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:50:29.688096Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:50:29.687966Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:52:50.525568Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:52:50.524468Z&quot;}" data-execution_count="3">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-12T12:07:26.351493Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-12T12:07:26.351365Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-12T12:09:50.921349Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-12T12:09:50.919384Z&quot;}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'cgm'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -383,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-dictionary" class="level1">
 <h1>Data dictionary</h1>
-<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:52:50.537380Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:52:50.536666Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:52:50.559767Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:52:50.559297Z&quot;}" data-execution_count="4">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-12T12:09:50.930891Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-12T12:09:50.930602Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-12T12:09:50.952924Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-12T12:09:50.952498Z&quot;}" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>

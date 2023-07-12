@@ -363,11 +363,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Diet logging using a smartphone app involves collecting data on food and drink consumption through a mobile application. These data include information such as types of food, serving sizes, nutritional information and the times of consumption. The data is used to track dietary habits and can be used in scientific research to gain insights into the dietary habits of a population and to correlate to other temporal measurements and events.</p>
 <section id="data-availability" class="level3">
 <h3 class="anchored" data-anchor-id="data-availability">Data availability:</h3>
-<p>The information is stored in 2 parquet file: <code>diet_logging.parquet</code>, <code>diet_logging_events.parquet</code> which contain the processed and raw diet logging data respectively.</p>
-<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:37:32.728941Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:37:32.728746Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:37:33.530301Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:37:33.529802Z&quot;}" data-execution_count="2">
+<p>The information is stored in 3 parquet files: <code>diet_logging.parquet</code>, <code>diet_logging_events.parquet</code>, <code>raw_diet_logging_events.parquet</code>which contains a summary table, processed and raw diet logging data respectively.</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-12T11:50:17.340855Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-12T11:50:17.340685Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-12T11:50:18.953903Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-12T11:50:18.953243Z&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pheno_utils <span class="im">import</span> PhenoLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:37:33.532197Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:37:33.532063Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:41:47.973869Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:41:47.971844Z&quot;}" data-execution_count="3">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-12T11:50:18.960061Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-12T11:50:18.959867Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-12T11:57:41.917362Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-12T11:57:41.916518Z&quot;}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'diet_logging'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -375,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>DataLoader for diet_logging with
-21 fields
+22 fields
 3 tables: ['diet_logging', 'diet_logging_events', 'age_sex']</code></pre>
 </div>
 </div>
@@ -383,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-dictionary" class="level1">
 <h1>Data dictionary</h1>
-<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:41:47.985518Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:41:47.983152Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:41:48.013842Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:41:48.012681Z&quot;}" data-execution_count="4">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-12T11:57:41.942224Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-12T11:57:41.941638Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-12T11:57:41.968972Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-12T11:57:41.968439Z&quot;}" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>

@@ -369,24 +369,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-availability" class="level3">
 <h3 class="anchored" data-anchor-id="data-availability">Data availability:</h3>
 <p>The information is stored in 2 main statistics parquet files: <code>sleep.parquet</code>, <code>hrv.parquet</code>; In multiple events parquets and in multiple time series parquets / EDF files containing sensor channels for each night of logging.</p>
-<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:43:06.746389Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:43:06.746220Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:43:07.528938Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:43:07.528386Z&quot;}" data-execution_count="2">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-12T11:57:46.745774Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-12T11:57:46.745559Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-12T11:57:47.647878Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-12T11:57:47.647445Z&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pheno_utils <span class="im">import</span> PhenoLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:43:07.530697Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:43:07.530558Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:47:11.520207Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:47:11.518648Z&quot;}" data-execution_count="3">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-12T11:57:47.649686Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-12T11:57:47.649376Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-12T12:03:44.744674Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-12T12:03:44.744169Z&quot;}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'sleep'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/home/jovyan/projects/pheno-utils_new/pheno_utils/pheno_loader.py:404: UserWarning: Error loading s3://pheno-master-data-collection-v1-prod-us-east-1/sleep/hrv.parquet:
+
+  warnings.warn(f'Error loading {df_path}:\n{err}')</code></pre>
+</div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>DataLoader for sleep with
-473 fields
-3 tables: ['sleep', 'hrv', 'age_sex']</code></pre>
+125 fields
+2 tables: ['sleep', 'age_sex']</code></pre>
 </div>
 </div>
 </section>
 </section>
 <section id="data-dictionary" class="level1">
 <h1>Data dictionary</h1>
-<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:47:11.539275Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:47:11.537630Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:47:11.646698Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:47:11.645929Z&quot;}" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-12T12:03:44.748372Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-12T12:03:44.748124Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-12T12:03:44.813030Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-12T12:03:44.812537Z&quot;}" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
