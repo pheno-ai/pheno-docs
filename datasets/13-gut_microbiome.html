@@ -373,16 +373,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 <section id="data-availability" class="level3">
 <h3 class="anchored" data-anchor-id="data-availability">Data availability:</h3>
-<p>The information is stored in multiple parquet files:</p>
-<ul>
-<li><code>metadata</code>: Sequencing and QC statistics.</li>
-<li><code>urs</code>: Segal Lab relative abundance.</li>
-<li><code>metaphlan_*</code>: 8 tables with MetaPhlAn 4 relative abundances, separated by taxonomic levels.</li>
-</ul>
-<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:48:43.404439Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:48:43.404238Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:48:44.288993Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:48:44.288460Z&quot;}" data-execution_count="2">
+<p>The information is stored in multiple parquet files: - <code>gut_microbiome.parquet</code>: Sequencing and QC statistics. - <code>urs</code>: Segal Lab relative abundance. - <code>metaphlan_*</code>: 8 tables with MetaPhlAn 4 relative abundances, separated by taxonomic levels.</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-12T12:04:25.391799Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-12T12:04:25.391645Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-12T12:04:26.483144Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-12T12:04:26.482600Z&quot;}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pheno_utils <span class="im">import</span> PhenoLoader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:48:44.290677Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:48:44.290561Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:49:14.203567Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:49:14.202760Z&quot;}" data-execution_count="3">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-12T12:04:26.486551Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-12T12:04:26.486418Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-12T12:05:43.381734Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-12T12:05:43.380881Z&quot;}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dl <span class="op">=</span> PhenoLoader(<span class="st">'gut_microbiome'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -395,7 +390,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data-dictionary" class="level1">
 <h1>Data dictionary</h1>
-<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-11T08:49:14.213667Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-11T08:49:14.213374Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-11T08:49:14.227623Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-11T08:49:14.227244Z&quot;}" data-execution_count="4">
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-07-12T12:05:43.388583Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-07-12T12:05:43.388343Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-07-12T12:05:43.401922Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-07-12T12:05:43.401503Z&quot;}" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dl.<span class="bu">dict</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
