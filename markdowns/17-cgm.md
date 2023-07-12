@@ -11,4 +11,4 @@ These were calculated for the entire CGM connection as well as for daily segment
 The actual glucose measures are stored in multiple parquet files, each file holds the glucose measures for a single CGM connection. <br>
 
 ### Data availability:
-The metadata and summary features are stored in 2 main statistics parquet files: `main.parquet`, `daily_iglu.parquet`.
+The metadata and summary features are stored in 3 main statistics parquet files: `cgm.parquet`, `iglu.parquet`, `iglu_daily.parquet`.
