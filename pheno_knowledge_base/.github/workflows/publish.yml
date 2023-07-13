@@ -24,13 +24,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-- name: Set up AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: eu-west-1
-- name: Build and deploy
-      run: |
-        # Deploy to S3 bucket
-        aws s3 sync docs s3://pheno-docs-eu --delete
+      - name: Set up AWS credentials
+            uses: aws-actions/configure-aws-credentials@v1
+            with:
+              aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+              aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+              aws-region: eu-west-1
+      - name: Build and deploy
+            run: |
+              # Deploy to S3 bucket
+              aws s3 sync docs s3://pheno-docs-eu --delete
