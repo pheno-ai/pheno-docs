@@ -20,6 +20,7 @@ website:
       - platform_tutorial.md
       - pheno_utils.md
       - faq.md
+      - data_format.qmd
       - section: "Datasets"
         contents:
           - href: datasets.md
