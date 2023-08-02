@@ -1,4 +1,4 @@
-# UKBB Survey
+# UKBB Questionnaire
 
 This lifestyle questionnaire is an adaptation of the UK Biobank touch screen questionnaire.
 The full version is sent to the participants via email and is completed online by them in the Zoho platform, prior or after the baseline visit. The short, followup, questionnaire version is filled by the participants in followup visits. 
